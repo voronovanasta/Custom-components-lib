@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack serve --open",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production",
+    "build": "webpack --env mode=production",
     "test": "jest --config jest.config.ts"
   },
   "keywords": [
