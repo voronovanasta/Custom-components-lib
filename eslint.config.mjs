@@ -8,6 +8,7 @@ import prettier from 'eslint-plugin-prettier';
 export default defineConfig([
   {
     env: {
+      jest: true,
       browser: true,
       es2021: true,
       'jest/globals': true,
