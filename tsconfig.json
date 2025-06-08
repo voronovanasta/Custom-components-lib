@@ -22,7 +22,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "allowUnreachableCode": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["jest", "node"]
   },
   "include": ["src"],
   "exclude": ["src/**/*test.tsx", "dist", "node_modules"],

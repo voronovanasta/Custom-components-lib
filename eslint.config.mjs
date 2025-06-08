@@ -7,17 +7,23 @@ import prettier from 'eslint-plugin-prettier';
 
 export default defineConfig([
   {
+    env: {
+      browser: true,
+      es2021: true,
+      'jest/globals': true,
+    },
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: {
       prettier: prettier,
       js,
+      jest,
     },
     settings: {
       react: {
         version: 'detect',
       },
     },
-    extends: ['js/recommended'],
+    extends: ['js/recommended', 'plugin:jest/recommended'],
     rules: {
       ...js.configs.recommended.rules,
       'prettier/prettier': [

@@ -1,33 +1,25 @@
-import React, { useState } from 'react';
+import React, { ReactNode } from 'react';
 import './Button.scss';
-export interface SmartRatingProps {
-  testIdPrefix: string;
-  title?: string;
-  theme: 'primary' | 'secondary';
-  disabled?: boolean;
-  size?: 'small' | 'medium' | 'large';
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'text' | 'contained' | 'outlined';
+  size: 'small' | 'medium' | 'large';
+  children?: ReactNode;
 }
-const Button: React.FC<SmartRatingProps> = (props) => {
-  const stars = Array.from({ length: 5 }, (_, i) => i + 1);
-  const [rating, setRating] = useState(0);
+const Button: React.FC<ButtonProps> = ({
+  variant = 'outlined',
+  size,
+  children,
+  className,
+  ...rest
+}) => {
+  const classes = [`button-lib`, `button-lib-${variant}`, `button-lib-${size}`, className]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={`star-rating rating-${props.theme}`}>
-      <h1>{props.title}</h1>
-      {stars.map((star, index) => {
-        const starCss = star <= rating ? 'starActive' : 'starInactive';
-        return (
-          <button
-            disabled={props.disabled}
-            data-testid={`${props.testIdPrefix}-${index}`}
-            key={star}
-            className={`${starCss}`}
-            onClick={() => setRating(star)}
-          >
-            <span className='star'>★</span>
-          </button>
-        );
-      })}
-    </div>
+    <button className={classes} {...rest}>
+      {children}
+    </button>
   );
 };
 
