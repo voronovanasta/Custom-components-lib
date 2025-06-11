@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-webpack5';
 
 const preview: Preview = {
   parameters: {
@@ -8,8 +8,13 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    actions: { argTypesRegex: '^on[A-Z].*' },
+
+    docs: {
+      codePanel: true
+    }
   },
+
+  tags: ['autodocs']
 };
 
 export default preview;

@@ -4,7 +4,7 @@ export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputEleme
   error?: boolean;
 }
 const TextField: React.FC<TextFieldProps> = ({ error, className, ...rest }) => {
-  let classes = [`textfield-lib`, className];
+  const classes = [`textfield-lib`, className];
   if (error) {
     classes.push('textfield-lib-error');
   }

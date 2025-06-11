@@ -25,8 +25,15 @@
     "skipLibCheck": true,
     "types": ["jest", "node"]
   },
-  "include": ["src"],
-  "exclude": ["src/**/*test.tsx", "dist", "node_modules"],
+  "include": [
+    "src",
+    ".storybook",
+    "jest.config.ts",
+    "jest.setup.ts",
+    "webpack.config.ts",
+    "src/**/*.test.tsx"
+  ],
+  "exclude": ["dist", "node_modules", "storybook-static", "coverage"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

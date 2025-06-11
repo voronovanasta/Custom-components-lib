@@ -51,7 +51,7 @@ describe('TextField', () => {
     expect(input).toHaveAttribute('title', 'Test title');
   });
 
-  it('should pass arbitrary input attributes', () => {
+  it('should pass  more arbitrary input attributes', () => {
     render(<TextField type='number' placeholder='1' min={1} max={10} step={3} required />);
 
     const input = screen.getByRole('spinbutton');
