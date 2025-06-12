@@ -23,6 +23,7 @@
   border-color: rgb(171, 235, 190);
 }
 .button-lib:disabled {
+  pointer-events: none;
   cursor: none;
   background-color: rgb(197, 198, 194);
   color: white;

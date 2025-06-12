@@ -1,0 +1,81 @@
+.checkbox-lib {
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  z-index: 1000;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.checkbox-lib:focus {
+  outline: none;
+}
+
+.checkbox-lib:disabled {
+  cursor: none;
+}
+
+.checkbox-container {
+  position: relative;
+  height: 1rem;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
+  width: 1rem;
+}
+
+.checkbox-container:hover {
+  border: 2px solid black;
+}
+
+.checked {
+  background-color: #1976d2;
+}
+
+.checkbox-container:has(input:focus) {
+  border: 2px solid #1976d2;
+}
+
+.checkbox-container:has(input:checked) {
+  border: 2px solid #1976d2;
+}
+
+.checkbox-container:has(input:disabled) {
+  cursor: none;
+  background-color: white;
+  color: white;
+  border: 2px solid rgb(186, 187, 182);
+}
+.checkbox-container:has(input:checked:disabled) {
+  cursor: none;
+  background-color: rgb(186, 187, 182);
+  color: white;
+  border: none;
+}
+
+.checkbox-container:has(input:required)::after {
+  content: '*';
+  font-size: small;
+  color: red;
+  position: absolute;
+  right: 0.1px;
+}
+
+.checkbox-container:has(input:required:checked)::after {
+  content: '';
+}
+
+svg {
+  position: absolute;
+  user-select: none;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}

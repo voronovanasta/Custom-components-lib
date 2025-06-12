@@ -73,5 +73,4 @@ export default tseslint.config(
     },
   }
   //pluginStorybook.configs.flat.recommended
-  //storybook.configs['flat/recommended']
 );
