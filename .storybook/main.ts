@@ -1,17 +1,16 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 
   addons: [
-    "@storybook/addon-webpack5-compiler-swc",
-    "@storybook/addon-onboarding",
-    "@chromatic-com/storybook",
-    "@storybook/addon-docs"
+    '@storybook/addon-webpack5-compiler-swc',
+    '@chromatic-com/storybook',
+    '@storybook/addon-docs',
   ],
 
   framework: {
-    name: "@storybook/react-webpack5",
+    name: '@storybook/react-webpack5',
     options: {},
   },
 
@@ -22,9 +21,9 @@ const config: StorybookConfig = {
       test: /\.s[ac]ss$/i,
       use: [
         // В зависимости от окружения можно использовать style-loader или MiniCssExtractPlugin.loader
-        require.resolve("style-loader"), // или MiniCssExtractPlugin.loader
-        require.resolve("css-loader"),
-        require.resolve("sass-loader"),
+        require.resolve('style-loader'), // или MiniCssExtractPlugin.loader
+        require.resolve('css-loader'),
+        require.resolve('sass-loader'),
       ],
     });
     return config;
@@ -33,7 +32,7 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;

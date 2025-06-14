@@ -1,19 +1,15 @@
 import { StoryFn, Meta } from '@storybook/react-webpack5';
-import Checkbox from './Checkbox';
+import Switch from './Switch';
 
 export default {
-  title: 'Components/Checkbox',
-  component: Checkbox,
+  title: 'Components/Switch',
+  component: Switch,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
   argTypes: { onChange: { action: 'click' } },
-} as Meta<typeof Checkbox>;
+} as Meta<typeof Switch>;
 
-const Template: StoryFn<typeof Checkbox> = (args) => (
-  <form>
-    <Checkbox {...args} />
-  </form>
-);
+const Template: StoryFn<typeof Switch> = (args) => <Switch {...args} />;
 
 export const Required = Template.bind({});
 Required.args = {
@@ -26,7 +22,6 @@ Required.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
-  defaultChecked: true,
   name: 'age',
   value: '18',
 };

@@ -50,28 +50,19 @@ const Select: React.FC<SelectProps> = ({
 
   function clickOptionHandler(event: MouseEvent<HTMLElement>) {
     const target = event.target as HTMLElement;
+    const value = target.getAttribute('value') || target.textContent || '';
 
-    let value: string | undefined;
-    if ('value' in target && typeof target.value === 'string') {
-      value = target.value;
-      if (multiple) {
-        setSelected((prev) => {
-          if (prev.includes(target.value as string)) {
-            target.classList.remove('selected');
-            return prev.filter((el) => el !== target.value);
-          }
-          target.classList.add('selected');
-          return [...prev, target.value as string];
-        });
-      } else {
-        setSelected([target.value]);
-      }
+    if (multiple) {
+      setSelected((prev) => {
+        if (prev.includes(value)) {
+          target.classList.remove('selected');
+          return prev.filter((el) => el !== value);
+        }
+        target.classList.add('selected');
+        return [...prev, value];
+      });
     } else {
-      value = target.textContent || '';
-      setSelected([target.textContent || '']);
-    }
-
-    if (!multiple) {
+      setSelected([value]);
       setIsOpen(false);
     }
 
@@ -90,7 +81,7 @@ const Select: React.FC<SelectProps> = ({
         id='select-lib'
         className={classes}
         type='text'
-        value={selected}
+        value={selected.join(', ')}
         onClick={clickHandler}
         required
         readOnly
@@ -116,7 +107,7 @@ const Select: React.FC<SelectProps> = ({
                 className: newClassName,
               });
             }
-            return child;
+            return null;
           })}
         </div>
       )}

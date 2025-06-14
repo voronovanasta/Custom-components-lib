@@ -25,6 +25,12 @@ describe('Checkbox', () => {
     const { getByRole } = render(<Checkbox checked />);
     expect(getByRole('checkbox')).toBeChecked();
   });
+
+  it('checkbox should be default checked', () => {
+    const { getByRole } = render(<Checkbox checked />);
+    expect(getByRole('checkbox')).toBeChecked();
+  });
+
   it('hover works on checkbox', () => {
     const handleMouseOver = jest.fn();
     const handleMouseOut = jest.fn();

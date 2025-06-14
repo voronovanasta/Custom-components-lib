@@ -29,14 +29,11 @@
   align-items: center;
   cursor: pointer;
   width: 1rem;
+  background-color: white;
 }
 
 .checkbox-container:hover {
-  border: 2px solid black;
-}
-
-.checked {
-  background-color: #1976d2;
+  border: 2px solid rgb(94, 93, 93);
 }
 
 .checkbox-container:has(input:focus) {
@@ -44,6 +41,7 @@
 }
 
 .checkbox-container:has(input:checked) {
+  background-color: #1976d2;
   border: 2px solid #1976d2;
 }
 
@@ -57,7 +55,7 @@
   cursor: none;
   background-color: rgb(186, 187, 182);
   color: white;
-  border: none;
+  border-color: rgb(186, 187, 182);
 }
 
 .checkbox-container:has(input:required)::after {
@@ -78,4 +76,12 @@ svg {
   display: inline-block;
   flex-shrink: 0;
   z-index: 1;
+}
+.checkbox-container svg {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.checkbox-container input:checked + svg {
+  opacity: 1;
 }
