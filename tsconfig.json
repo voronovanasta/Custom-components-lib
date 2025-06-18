@@ -27,16 +27,16 @@
     "types": ["jest", "node"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": [
-    "src",
-    ".storybook",
+  "include": ["src", ".storybook", "src/**/*.test.tsx", "src/types/global.d.ts"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "storybook-static",
+    "coverage",
     "jest.config.ts",
     "jest.setup.ts",
-    "webpack.config.ts",
-    "src/**/*.test.tsx",
-    "src/types/global.d.ts"
+    "webpack.config.ts"
   ],
-  "exclude": ["dist", "node_modules", "storybook-static", "coverage"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

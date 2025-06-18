@@ -16,65 +16,59 @@ Built with Webpack
 
 Supports React 18+
 
-**Installation**
+**Installation**:
+
 Install the package via npm:
-npm install @voronova/custom-components-lib
 
-or yarn:
-yarn add @voronova/custom-components-lib
+- npm install @voronova/custom-components-lib
 
-**Usage**
-Import components into your React project:
+- or yarn:
+  yarn add @voronova/custom-components-lib
 
-tsx
-import { YourComponent } from '@voronovanasta/custom-components-lib';
+**How to run the app**:
+_Prerequisites_:
 
-function App() {
-return <YourComponent />;
-}
+- Node.js (>= 16.x recommended)
+- npm or yarn package manager
 
-**How to run the app**
-Prerequisites:
-Node.js (>= 16.x recommended)
-npm or yarn package manager
+  1.Development server with Storybook:
+  To start the Storybook development server and view components interactively:
 
-1.Development server with Storybook
-To start the Storybook development server and view components interactively:
-
-npm run storybook
+-npm run storybook
 or
 
-yarn storybook
+-yarn storybook.
 This will launch Storybook at http://localhost:6006.
 
-2.Build the library
-npm run build
+2.Build the library:
+
+- npm run build
+  or
+
+- yarn build.
+  The output will be in the dist/ directory.
+
+  3.Run tests:
+  To run unit and integration tests with Jest:
+
+-npm test
 or
 
-yarn build
-The output will be in the dist/ directory.
+-yarn test.
 
-3.Run tests
-To run unit and integration tests with Jest:
+4.Lint and format
+To run ESLint and automatically fix issues:
 
-npm test
-or
+- npm run lint
+  or
 
-yarn test
-Lint and format
+- yarn lint.
 
-4.To run ESLint and automatically fix issues:
-
-npm run lint
-or
-
-yarn lint
-
-!Peer _Dependencies_
+!Peer _Dependencies_:
 This library requires the following peer dependencies in your project:
 
-react
+- react
 
-react-dom
+- react-dom
 
 Make sure to install compatible versions.
