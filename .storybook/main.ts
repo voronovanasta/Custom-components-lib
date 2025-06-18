@@ -15,17 +15,33 @@ const config: StorybookConfig = {
   },
 
   webpackFinal: async (config) => {
-    // Добавляем правило для обработки SCSS
     config.module = config.module || { rules: [] };
-    config.module.rules!.push({
-      test: /\.s[ac]ss$/i,
-      use: [
-        // В зависимости от окружения можно использовать style-loader или MiniCssExtractPlugin.loader
-        require.resolve('style-loader'), // или MiniCssExtractPlugin.loader
-        require.resolve('css-loader'),
-        require.resolve('sass-loader'),
-      ],
-    });
+    config.module.rules!.push(
+      {
+        test: /\.module\.s[ac]ss$/i,
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              modules: {
+                localIdentName: '[local]--[hash:base64:5]',
+              },
+            },
+          },
+          require.resolve('sass-loader'),
+        ],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        exclude: /\.module\.s[ac]ss$/i,
+        use: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader'),
+          require.resolve('sass-loader'),
+        ],
+      }
+    );
     return config;
   },
 

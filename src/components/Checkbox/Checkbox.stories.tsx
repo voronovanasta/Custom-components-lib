@@ -26,7 +26,6 @@ Required.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
-  defaultChecked: true,
   name: 'age',
   value: '18',
 };

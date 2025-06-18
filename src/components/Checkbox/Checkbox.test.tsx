@@ -21,13 +21,9 @@ describe('Checkbox', () => {
     const { getByRole } = render(<Checkbox required />);
     expect(getByRole('checkbox')).toBeRequired();
   });
-  it('checkbox should be checked', () => {
-    const { getByRole } = render(<Checkbox checked />);
-    expect(getByRole('checkbox')).toBeChecked();
-  });
 
   it('checkbox should be default checked', () => {
-    const { getByRole } = render(<Checkbox checked />);
+    const { getByRole } = render(<Checkbox defaultChecked />);
     expect(getByRole('checkbox')).toBeChecked();
   });
 

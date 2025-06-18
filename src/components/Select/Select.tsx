@@ -1,16 +1,15 @@
 import React, { useState, MouseEvent, useEffect, useRef, useLayoutEffect } from 'react';
-import './Select.scss';
+import * as styles from './Select.module.scss';
 export type SelectProps = React.InputHTMLAttributes<HTMLInputElement>;
 const Select: React.FC<SelectProps> = ({
   size,
-  required,
   multiple,
   children,
   className,
   onChange,
   ...restProps
 }) => {
-  const classes = [`select-lib`, className].filter(Boolean).join(' ');
+  const classes = [styles['select-lib'], className].filter(Boolean).join(' ');
   const [listStyle, setListStyle] = useState<React.CSSProperties>({});
   const [selected, setSelected] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -76,23 +75,39 @@ const Select: React.FC<SelectProps> = ({
     }
   }
   return (
-    <div ref={containerRef} className={required ? 'select-container required' : 'select-container'}>
+    <div ref={containerRef} className={styles['select-container']}>
       <input
-        id='select-lib'
         className={classes}
         type='text'
         value={selected.join(', ')}
         onClick={clickHandler}
-        required
         readOnly
         {...restProps}
-      ></input>
+      />
+      <svg
+        onClick={clickHandler}
+        className={isOpen ? `${styles.arrow} ${styles.down}` : `${styles.arrow} ${styles.up}`}
+        width='12'
+        height='8'
+        viewBox='0 0 12 8'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+        aria-hidden='true'
+      >
+        <path
+          d='M1 1L6 6L11 1'
+          stroke='rgb(111 107 107 / 87%)'
+          strokeWidth='2'
+          strokeLinecap='round'
+        />
+      </svg>
       {isOpen && (
         <div
           ref={listRef}
           onClick={clickOptionHandler}
-          className={`select-children`}
+          className={styles['select-children']}
           style={{ ...listStyle }}
+          data-testid='select-list'
         >
           {React.Children.map(children, (child) => {
             if (React.isValidElement<HTMLOptionElement>(child)) {
@@ -100,7 +115,8 @@ const Select: React.FC<SelectProps> = ({
               const childValue = childProps.value.toString();
               const isSelected = selected.includes(childValue);
               const existingClassName = childProps.className || '';
-              const newClassName = `${existingClassName} ${isSelected ? 'selected' : ''}`.trim();
+              const newClassName =
+                `${existingClassName} ${isSelected ? styles.selected : ''}`.trim();
 
               return React.cloneElement(child, {
                 ...childProps,

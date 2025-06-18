@@ -1,0 +1,92 @@
+.switch-lib {
+  position: absolute;
+  appearance: none;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.switch-container {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 32px;
+}
+
+.toggler {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #838384;
+  opacity: 100%;
+  border-radius: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 16px;
+}
+
+.switch-container:before {
+  content: '';
+  background: #f5f5f5;
+  border-radius: 16px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  box-shadow: 0 3.2px 8px 2px #0000003d;
+  transition: 0.5s;
+  padding: 2px;
+  z-index: 1;
+}
+
+input:checked + .toggler {
+  background-color: #bdd8ef;
+}
+
+.switch-container:has(input:checked)::before {
+  transform: translateX(20px);
+  background-color: #2196f3;
+}
+
+.switch-container:has(input:focus)::before {
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2392156863);
+}
+
+.switch-container:has(input:disabled) {
+  cursor: none;
+  pointer-events: none;
+}
+
+.switch-container:has(input:checked:disabled) {
+  cursor: none;
+  pointer-events: none;
+}
+
+.switch-container:has(input:checked:disabled) .toggler {
+  cursor: none;
+  background-color: #d6e5f2;
+}
+
+.switch-container:has(input:disabled) .toggler {
+  cursor: none;
+  background-color: rgb(186, 187, 182);
+}
+
+.switch-container:has(input:disabled)::before {
+  background-color: #f5f5f5;
+}
+
+.switch-container:has(input:checked:disabled)::before {
+  background-color: rgb(167, 202, 237);
+}
+
+.switch-container:hover::before {
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2392156863);
+}

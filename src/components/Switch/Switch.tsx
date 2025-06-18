@@ -1,15 +1,15 @@
 import React from 'react';
-import './Switch.scss';
+import * as styles from './Switch.module.scss';
 
 export type SwitchProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const Switch: React.FC<SwitchProps> = ({ className, ...restProps }) => {
-  const classes = [`switch-lib`, className].filter(Boolean).join(' ');
+  const classes = [styles['switch-lib'], className].filter(Boolean).join(' ');
 
   return (
-    <span className='switch-container '>
+    <span className={styles['switch-container']}>
       <input className={classes} type='checkbox' {...restProps} />
-      <span className='toggler'></span>
+      <span className={styles.toggler}></span>
     </span>
   );
 };

@@ -23,7 +23,9 @@
     "noUncheckedIndexedAccess": true,
     "allowUnreachableCode": false,
     "skipLibCheck": true,
-    "types": ["jest", "node"]
+    "resolveJsonModule": true,
+    "types": ["jest", "node"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
     "src",
@@ -31,17 +33,10 @@
     "jest.config.ts",
     "jest.setup.ts",
     "webpack.config.ts",
-    "src/**/*.test.tsx"
+    "src/**/*.test.tsx",
+    "src/types/global.d.ts"
   ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "storybook-static",
-    "coverage",
-    "webpack.config.ts",
-    "jest.config.ts",
-    "jest.setup.ts"
-  ],
+  "exclude": ["dist", "node_modules", "storybook-static", "coverage"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

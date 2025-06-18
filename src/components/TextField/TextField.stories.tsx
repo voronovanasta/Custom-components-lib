@@ -5,6 +5,7 @@ export default {
   title: 'Components/TextField',
   component: TextField,
   tags: ['autodocs'],
+  parameters: { layout: 'centered' },
 } as Meta<typeof TextField>;
 
 const Template: StoryFn<typeof TextField> = (args) => <TextField {...args} />;
@@ -44,8 +45,8 @@ ReadOnlyProp.args = {
 
 export const SizeProp = Template.bind({});
 SizeProp.args = {
-  value: 'SizeSizeSizeSizeSizeSize',
-  size: 10,
+  size: 16,
+  type: 'text',
 };
 
 export const PasswordType = Template.bind({});

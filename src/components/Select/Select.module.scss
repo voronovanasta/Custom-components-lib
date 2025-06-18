@@ -1,0 +1,123 @@
+.select-container {
+  position: relative;
+  min-height: 2.5rem;
+  width: max-content;
+}
+
+.select-lib {
+  padding: 5px 15px;
+  border: 1px solid black;
+  text-decoration: none;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.03rem;
+  border-radius: 4px;
+  vertical-align: middle;
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.select-lib:hover {
+  border-width: 2px;
+}
+
+.select-lib:active {
+  border: 3px solid #1976d2;
+}
+
+.select-lib:focus {
+  border: 3px solid hsl(210, 100%, 60%);
+}
+
+.select-lib:disabled {
+  cursor: auto;
+  background-color: rgb(197, 198, 194);
+  color: white;
+  border: none;
+}
+
+.select-container:has(.select-lib:disabled) {
+  cursor: none;
+}
+
+.select-children {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.select-children > * {
+  outline: none;
+  border: none;
+  margin: 0;
+  border-radius: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.00938em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  min-height: 48px;
+  padding: 6px 16px;
+  box-sizing: border-box;
+}
+
+.select-children > *.selected {
+  background-color: #c1c1d5;
+}
+
+.select-children > *:hover {
+  background-color: #a4a4dc;
+}
+
+.select-children > *:active {
+  background-color: #98989e;
+}
+
+.select-container:has(input:required)::after {
+  content: '*';
+  color: red;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 3.2px;
+  left: 5px;
+}
+
+.arrow {
+  position: absolute;
+  user-select: none;
+  display: inline-block;
+  flex-shrink: 0;
+  bottom: 14.4px;
+  right: 9px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+  bottom: 16px;
+}
+
+.arrow.down {
+  transform: rotate(0deg);
+}

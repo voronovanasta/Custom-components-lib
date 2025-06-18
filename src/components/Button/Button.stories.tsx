@@ -5,6 +5,7 @@ export default {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
+  parameters: { layout: 'centered' },
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
@@ -45,14 +46,14 @@ Small.args = {
   size: 'small',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  children: 'Text',
-  size: 'large',
-};
-
 export const Medium = Template.bind({});
 Medium.args = {
   children: 'Text',
   size: 'medium',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  children: 'Text',
+  size: 'large',
 };

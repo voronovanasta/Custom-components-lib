@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import './Button.scss';
+import * as classes from './Button.module.scss';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'text' | 'contained' | 'outlined';
   size: 'small' | 'medium' | 'large';
@@ -12,12 +12,17 @@ const Button: React.FC<ButtonProps> = ({
   className,
   ...rest
 }) => {
-  const classes = [`button-lib`, `button-lib-${variant}`, `button-lib-${size}`, className]
+  const classesProp = [
+    classes['button-lib'],
+    classes[`button-lib-${variant}`],
+    classes[`button-lib-${size}`],
+    className,
+  ]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <button className={classes} {...rest}>
+    <button className={classesProp} {...rest}>
       {children}
     </button>
   );

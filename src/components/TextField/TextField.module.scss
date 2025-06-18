@@ -1,0 +1,66 @@
+.textfield-lib {
+  width: fit-content;
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid blue;
+}
+
+input[type='number'] {
+  width: 100%;
+}
+
+.textfield-lib-error {
+  border: 1.5px solid #d32f2f;
+}
+
+.input-lib {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.03rem;
+  color: rgba(0, 0, 0, 0.87);
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  height: 1.5em;
+  margin: 0px;
+  padding: 16.5px 14px;
+  outline: none;
+  max-width: 100%;
+}
+
+.textfield-lib:hover {
+  border-color: rgb(20, 203, 84);
+}
+
+.textfield-lib:active {
+  border-color: rgb(147, 212, 170);
+  opacity: 60%;
+  color: grey;
+}
+.textfield-lib-error:hover,
+.textfield-lib-error:active {
+  border-color: #d32f2f;
+  opacity: 100%;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.textfield-lib-error .input-lib:focus {
+  border: 2px solid red;
+}
+
+.textfield-lib:has(.input-lib:disabled) {
+  cursor: none;
+  background-color: rgb(197, 198, 194);
+  color: white;
+  border-color: rgb(197, 198, 194);
+  opacity: 100%;
+}
+
+.input-lib:disabled {
+  cursor: auto;
+}

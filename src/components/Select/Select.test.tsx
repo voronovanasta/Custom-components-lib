@@ -35,7 +35,7 @@ describe('Select', () => {
       value: 200,
     });
 
-    const { container, getByRole } = render(
+    const { getByRole, getByTestId } = render(
       <Select size={size}>
         {options.map((opt) => (
           <option key={opt.value} style={{ height: '40px' }} value={opt.value}>
@@ -48,10 +48,10 @@ describe('Select', () => {
     const input = getByRole('textbox');
     fireEvent.click(input);
 
-    const listContainer = container.querySelector('.select-children') as HTMLElement;
+    const listContainer = getByTestId('select-list') as HTMLElement;
 
     await waitFor(() => {
-      expect(listContainer!.style.height).toBe('120px'); // 40px * 3 = 120px
+      expect(listContainer!.style.height).toBe('120px');
     });
   });
 
