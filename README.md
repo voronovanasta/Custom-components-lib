@@ -1,20 +1,21 @@
 **Task**: https://drive.google.com/file/d/1C148FRnWfXVoRDslDWcYac3bEhebdIAV/view?pli=1
 
-App: @voronova/custom-components-lib
-A custom React component library built with TypeScript, Webpack, and SCSS modules. Designed to provide reusable, well-tested UI components with Storybook integration for easy documentation and development.
+**App**:
+*@voronova/custom-components-lib*
+- A custom React component library, designed to provide reusable, well-tested UI components with Storybook integration for easy documentation and development.
 
 **Features**:
-Written in TypeScript for type safety
+- Written in TypeScript for type safety
 
-Uses SCSS modules for styling
+- Uses SCSS modules for styling
 
-Tested with Jest and React Testing Library
+- Tested with Jest and React Testing Library
 
-Storybook for interactive component development and documentation: [storybook](https://voronova-custom-components-storybook.netlify.app/?path=/docs/components-button--docs)
+- Storybook for interactive component development and documentation: [storybook](https://voronova-custom-components-storybook.netlify.app/?path=/docs/components-button--docs)
 
-Built with Webpack
+- Built with Webpack
 
-Supports React 18+
+- Supports React 18+
 
 **Installation**:
 
@@ -26,13 +27,13 @@ Install the package via npm:
   yarn add @voronova/custom-components-lib
 
 **How to run the app**:
-_Prerequisites_:
+*Prerequisites:*
 
 - Node.js (>= 16.x recommended)
 - npm or yarn package manager
 
-  1.Development server with Storybook:
-  To start the Storybook development server and view components interactively:
+1.Development server with Storybook:
+To start the Storybook development server and view components interactively:
 
 -npm run storybook
 or
@@ -48,8 +49,8 @@ This will launch Storybook at http://localhost:6006.
 - yarn build.
   The output will be in the dist/ directory.
 
-  3.Run tests:
-  To run unit and integration tests with Jest:
+3.Run tests:
+To run unit and integration tests with Jest:
 
 -npm test
 or
@@ -64,7 +65,7 @@ To run ESLint and automatically fix issues:
 
 - yarn lint.
 
-!Peer _Dependencies_:
+**!Peer _Dependencies:**
 This library requires the following peer dependencies in your project:
 
 - react
