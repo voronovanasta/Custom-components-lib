@@ -1,5 +1,5 @@
 {
-  "name": "@voronovanasta/custom-components-lib",
+  "name": "@voronova/custom-components-lib",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/bundle.js",
