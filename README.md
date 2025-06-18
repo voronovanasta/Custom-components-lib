@@ -18,10 +18,10 @@ Supports React 18+
 
 **Installation**
 Install the package via npm:
-npm install @voronovanasta/custom-components-lib
+npm install @voronova/custom-components-lib
 
 or yarn:
-yarn add @voronovanasta/custom-components-lib
+yarn add @voronova/custom-components-lib
 
 **Usage**
 Import components into your React project:
